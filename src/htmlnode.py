@@ -13,7 +13,7 @@ class HTMLNode:
 
     def __repr__(self):
         # Return a string representation of the HTMLNode object
-        return f"HTMLNode({self.tag}, {self.value}, {self.children}, {self.props})"
+        return f"HTMLNode({self.tag}, {self.value}, children: {self.children}, {self.props})"
 
     def to_html(self):
         # Child classes will override this method to render themselves as HTML
@@ -24,12 +24,10 @@ class HTMLNode:
         # input: {"href": "https://www.google.com", "target": "_blank"}
         # output: href="https://www.google.com" target="_blank"
         string = ""
+        if self.props_to_html is None:
+            return string
 
         for prop in self.props:
             string += f" {prop}=\"{self.props[prop]}\""
 
         return string
-
-# Test props_to_html method
-test = HTMLNode(1,2,3,{"href": "https://www.google.com", "target": "_blank"}).props_to_html()
-print(test)

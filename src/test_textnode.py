@@ -7,8 +7,6 @@ from textnode import (
     text_type_italic
 )
 
-
-
 class TestTextNode(unittest.TestCase):
     def test_eq(self):
         node = TextNode("This is a text node", "bold")
