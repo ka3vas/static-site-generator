@@ -1,3 +1,7 @@
+text_type_text = "text"
+text_type_bold = "bold"
+text_type_italic = "italic"
+
 class TextNode:
     def __init__(self, text, text_type, url=None):
         # Initializing the properties of the class
@@ -12,14 +16,11 @@ class TextNode:
     def __eq__(self, other):
         # Check if all properties are equal
         return (
-            self == other.text and
+            self.text == other.text and
             self.text_type == other.text_type and 
             self.url == other.url
         )
             
-        
-       
-        
     def __repr__(self):
         # Return a string representation of the TextNode object
         return f"TextNode({self.text}, {self.text_type}, {self.url})"
