@@ -24,7 +24,7 @@ class HTMLNode:
         # input: {"href": "https://www.google.com", "target": "_blank"}
         # output: href="https://www.google.com" target="_blank"
         string = ""
-        if self.props_to_html is None:
+        if self.props is None:
             return string
 
         for prop in self.props:

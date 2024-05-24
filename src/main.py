@@ -7,7 +7,5 @@ def main():
     test = HTMLNode(1,2,3,{"href": "https://www.google.com", "target": "_blank"})
     print(test)
 
-
-
 if __name__ == "__main__":
     main()
